@@ -1,4 +1,4 @@
-
+const wrapper = document.querySelector('.wrapper');
 const rock = document.querySelector('.rock');
 const scissors = document.querySelector('.scissors');
 const paper = document.querySelector('.paper');
@@ -6,6 +6,10 @@ const paper = document.querySelector('.paper');
 const userScore = document.querySelector('.player-score');
 const compScore = document.querySelector('.computer-score');
 const finishScore = document.querySelector('.result-text')
+
+const battle = document.createElement('p');
+battle.classList.add('battle');
+wrapper.appendChild(battle)
 
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
@@ -23,6 +27,7 @@ let maxScore = 5;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
+        battle.textContent = "Tie"
         return 'Tie!';
 
     } else if (
@@ -31,12 +36,12 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === 'scissors' && computerSelection === 'paper')
     ) {
         playerScore++;
-
+        battle.textContent = `You win! ${playerSelection} beats ${computerSelection}.`
         return `You win! ${playerSelection} beats ${computerSelection}.`;
 
     } else {
         computerScore++;
-
+        battle.textContent = `Computer wins! ${computerSelection} beats ${playerSelection}.`
         return `Computer wins! ${computerSelection} beats ${playerSelection}.`;
 
 

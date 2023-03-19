@@ -11,6 +11,7 @@ div.score {
     justify-content: center;
     gap:400px;
     font-size: 30px;
+    font-weight: bold;
     
 }
 
@@ -47,7 +48,7 @@ button:hover {
 }
 
 .scissors {
-    background-color: rgb(20, 131, 221);
+    background-color: rgb(23, 214, 39);
 }
 
 button:active {
@@ -59,4 +60,11 @@ button:active {
     font-size: 44px;
     text-align: center;
     margin: 50px auto 0;
+}
+
+
+.battle {
+    text-align: center;
+    font-size: 30px;
+
 }
